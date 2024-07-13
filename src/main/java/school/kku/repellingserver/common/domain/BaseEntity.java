@@ -1,0 +1,28 @@
+package school.kku.repellingserver.common.domain;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
+
+@EntityListeners(AuditingEntityListener.class)
+@MappedSuperclass
+@Getter
+public abstract class BaseEntity {
+
+    @Column(updatable = false)
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+    //MYSQL 에서만 작동 db 변경시 수정 필요
+    @Column(columnDefinition = "boolean default false")
+    private Boolean delYn;
+}

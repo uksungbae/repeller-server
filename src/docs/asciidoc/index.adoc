@@ -1,0 +1,203 @@
+# API 문서
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+
+== GitHub 주소
+
+* link:https://github.com/Kku-Tide-Repelling/repelling-server[GitHub 주소]
+
+== API 목록
+
+=== 퇴치 데이터 (게이트웨이에서 받는)
+
+==== 퇴치 데이터 전송
+
+==== Request
+
+include::{snippets}/repellent-data/success/http-request.adoc[]
+include::{snippets}/repellent-data/success/request-fields.adoc[]
+
+DetectionType 현재 넣을 수 있는 타입::
+PIR, BIRD, PIG,
+
+==== Response
+
+include::{snippets}/repellent-data/success/http-response.adoc[]
+
+=== 로그인 성공
+
+=== Request
+
+include::{snippets}/member/login/success/http-request.adoc[]
+include::{snippets}/member/login/success/request-fields.adoc[]
+
+=== Response
+
+include::{snippets}/member/login/success/http-response.adoc[]
+
+
+=== 회원가입
+
+==== Request
+
+include::{snippets}/member/register/success/http-request.adoc[]
+include::{snippets}/member/register/success/request-fields.adoc[]
+
+==== Response
+
+include::{snippets}/member/register/success/http-response.adoc[]
+
+=== 회원가입 이메일 인증번호 전송
+
+==== Request
+
+include::{snippets}/member/register/certification/success/http-request.adoc[]
+query-parameters::
+include::{snippets}/member/register/certification/success/query-parameters.adoc[]
+
+==== Response
+include::{snippets}/member/register/certification/success/http-response.adoc[]
+
+=== 아이디 찾기
+
+==== Request
+
+include::{snippets}/member/find/id/success/http-request.adoc[]
+query-parameters::
+include::{snippets}/member/find/id/success/query-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/member/find/id/success/http-response.adoc[]
+include::{snippets}/member/find/id/success/response-fields.adoc[]
+
+=== 농장 리스트 조회 (설정페이지)
+
+==== Request
+
+include::{snippets}/farm/setting/list/success/http-request.adoc[]
+
+==== Response
+
+include::{snippets}/farm/setting/list/success/http-response.adoc[]
+include::{snippets}/farm/setting/list/success/response-fields.adoc[]
+
+=== 농장 리스트 조회 (메인 페이지)
+
+==== Request
+
+include::{snippets}/farm/list/success/http-request.adoc[]
+
+==== Response
+
+include::{snippets}/farm/list/success/http-response.adoc[]
+include::{snippets}/farm/list/success/response-fields.adoc[]
+
+=== 게이트웨이의 serialId가 존재하는지
+
+==== Request
+
+include::{snippets}/gateway/serial-id/exists/success/http-request.adoc[]
+query-parameters::
+include::{snippets}/gateway/serial-id/exists/success/query-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/gateway/serial-id/exists/success/http-response.adoc[]
+include::{snippets}/gateway/serial-id/exists/success/response-fields.adoc[]
+
+=== 퇴치 데이터 리스트 (5일 치, 메인 페이지 에서 사용)
+
+==== Request
+
+include::{snippets}/repellent-data/main/success/http-request.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/main/success/http-response.adoc[]
+include::{snippets}/repellent-data/main/success/response-fields.adoc[]
+
+
+=== 퇴치기기의 serialId가 존재하는지 안하는지
+
+==== Request
+
+include::{snippets}/repellent-device/valid/serial-id/success/http-request.adoc[]
+RequestParam::
+include::{snippets}/repellent-device/valid/serial-id/success/query-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-device/valid/serial-id/success/http-response.adoc[]
+include::{snippets}/repellent-device/valid/serial-id/success/response-fields.adoc[]
+
+== 상세페이지 API
+
+=== 농장 퇴치 현황
+
+==== Request
+
+include::{snippets}/repellent-data/detail/group-farm/success/http-request.adoc[]
+path-parameters::
+include::{snippets}/repellent-data/detail/group-farm/success/path-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/detail/group-farm/success/http-response.adoc[]
+include::{snippets}/repellent-data/detail/group-farm/success/response-fields.adoc[]
+
+=== 농장 퇴치 현황 (시간별)
+
+==== Request
+
+include::{snippets}/repellent-data/detail/group-time/success/http-request.adoc[]
+path-parameters::
+include::{snippets}/repellent-data/detail/group-time/success/path-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/detail/group-time/success/http-response.adoc[]
+include::{snippets}/repellent-data/detail/group-time/success/response-fields.adoc[]
+
+=== 농장 퇴치 현황 (퇴치 기기별)
+
+==== Request
+
+include::{snippets}/repellent-data/detail/group-detection-device/success/http-request.adoc[]
+path-parameters::
+include::{snippets}/repellent-data/detail/group-detection-device/success/path-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/detail/group-detection-device/success/http-response.adoc[]
+
+include::{snippets}/repellent-data/detail/group-detection-device/success/response-fields.adoc[]
+
+=== 농장 퇴치 현황 ( 퇴치 기기하나의)
+
+==== Request
+
+include::{snippets}/repellent-data/detail/detection-device-id/success/http-request.adoc[]
+path-parameters::
+include::{snippets}/repellent-data/detail/detection-device-id/success/path-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/detail/detection-device-id/success/http-response.adoc[]
+
+include::{snippets}/repellent-data/detail/detection-device-id/success/response-fields.adoc[]
+
+=== 퇴치기기별 최근 4개의 퇴치소리와 재탐지 시간
+
+==== Request
+
+include::{snippets}/repellent-data/detail/detection/detection-device-id/success/http-request.adoc[]
+path-parameters::
+include::{snippets}/repellent-data/detail/detection/detection-device-id/success/path-parameters.adoc[]
+
+==== Response
+
+include::{snippets}/repellent-data/detail/detection/detection-device-id/success/http-response.adoc[]

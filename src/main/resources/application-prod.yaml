@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    tomcat:
+      initial-size: 30
+  config:
+    activate:
+      on-profile: prod
+    import:
+      - submodule/application-db.yaml
+
+
